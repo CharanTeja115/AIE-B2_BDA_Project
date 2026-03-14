@@ -1,0 +1,23 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: aq_backend
+    ports:
+      - "8000:8000"
+    networks:
+      - bda_hadoop
+
+  dashboard:
+    build: ./dashboard
+    container_name: aq_dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    networks:
+      - bda_hadoop
+
+networks:
+  bda_hadoop:
+    external: true
