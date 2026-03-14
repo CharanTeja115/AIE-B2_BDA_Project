@@ -44,6 +44,17 @@ AIE-B2_BDA_Project
 ├── 22AIE312_BIG-DATA_ANALYTICS_B2.pdf
 └── README.md
 ```
+## Documentation
+
+This repository also contains the complete project documentation:
+
+* **Project Report:**
+  `B2.pdf`
+
+* **Project Presentation (PPT converted to PDF):**
+  `22AIE312_BIG-DATA_ANALYTICS_B2.pdf`
+
+These documents explain the **problem statement, methodology, system architecture, dataset, implementation, and results** of the project.
 
 ---
 ## Dataset
@@ -91,20 +102,6 @@ The system pipeline consists of:
 5. **Visualization**
 
    * Streamlit dashboard to visualize prediction performance
-
-
-## Documentation
-
-This repository also contains the complete project documentation:
-
-* **Project Report:**
-  `B2.pdf`
-
-* **Project Presentation (PPT converted to PDF):**
-  `22AIE312_BIG-DATA_ANALYTICS_B2.pdf`
-
-These documents explain the **problem statement, methodology, system architecture, dataset, implementation, and results** of the project.
-
 ---
 
 ## Results
