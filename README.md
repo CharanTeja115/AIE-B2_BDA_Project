@@ -1,54 +1,71 @@
-# Air Quality Prediction System using Big Data Analytics
+# Real-Time Air Quality Monitoring and Pollution Prediction
 
 ## Project Overview
 
-This project focuses on analyzing and predicting air pollution levels using **Big Data technologies**. The system processes large air quality datasets using **Apache Spark and Scala**, performs data preprocessing, and trains machine learning models to predict pollution levels.
+This project presents a **Big Data analytics framework for air quality monitoring and pollution prediction**.
+The system uses **Apache Hadoop (HDFS)** for distributed storage and **Apache Spark** for large-scale data processing and machine learning.
 
-The project also includes a **backend service and visualization dashboard** to monitor air quality metrics.
-
----
-
-## Objectives
-
-* Analyze air pollution datasets using Big Data tools
-* Perform data preprocessing and feature engineering
-* Train a machine learning model for air quality prediction
-* Visualize pollution trends and predictions
-* Deploy the system using Docker containers
+A **Random Forest regression model using Spark MLlib** is applied to predict pollutant concentrations such as PM2.5, PM10, NO₂, SO₂, CO, and O₃ based on historical environmental data.
 
 ---
 
 ## Technologies Used
 
-* **Apache Spark**
-* **Scala**
-* **SBT (Scala Build Tool)**
-* **Python (Backend API)**
-* **Docker**
-* **Machine Learning**
-* **Big Data Analytics**
+* Apache Hadoop (HDFS)
+* Apache Spark
+* Spark MLlib
+* Scala
+* Python
+* Docker
+* Streamlit (Visualization Dashboard)
 
 ---
 
-## Project Architecture
+## Dataset
 
-The system consists of three main components:
+The project uses a large air quality dataset containing pollutant measurements and environmental attributes including:
 
-1. **Data Processing Layer**
+* PM2.5
+* PM10
+* NO₂
+* SO₂
+* CO
+* O₃
+* Temperature
+* Humidity
+* Wind Speed
 
-   * Implemented using **Apache Spark with Scala**
-   * Performs data cleaning and preprocessing
-   * Handles large-scale air pollution datasets
+Dataset Source:
+https://zenodo.org/records/17085064
 
-2. **Machine Learning Layer**
+---
 
-   * Trains predictive models for air quality levels
-   * Uses historical pollution data for predictions
+## System Architecture
 
-3. **Application Layer**
+The system pipeline consists of:
 
-   * Backend API for serving predictions
-   * Dashboard for visualizing pollution metrics
+1. **Data Ingestion**
+
+   * Air quality dataset downloaded from OpenAQ / cloud storage
+   * Stored in **Hadoop HDFS**
+
+2. **Data Preprocessing**
+
+   * Handling missing values
+   * Timestamp processing
+   * Feature extraction using Spark DataFrames
+
+3. **Model Training**
+
+   * Random Forest Regression using **Spark MLlib**
+
+4. **Model Evaluation**
+
+   * Metrics used: **R² Score and MAE**
+
+5. **Visualization**
+
+   * Streamlit dashboard to visualize prediction performance
 
 ---
 
@@ -59,13 +76,7 @@ AIE-B2_BDA_Project
 │
 ├── AirQualitySystem
 │   ├── backend
-│   │   ├── app.py
-│   │   └── Dockerfile
-│   │
 │   ├── dashboard
-│   │   ├── dashboard.py
-│   │   └── Dockerfile
-│   │
 │   └── docker-compose.yml
 │
 ├── src
@@ -75,91 +86,62 @@ AIE-B2_BDA_Project
 │           └── TrainAirQualityModel.scala
 │
 ├── project
-│   └── build.properties
-│
 ├── build.sbt
+├── B2.pdf
+├── 22AIE312_BIG-DATA_ANALYTICS_B2.pdf
 └── README.md
 ```
 
 ---
 
-## Dataset
+## Documentation
 
-The dataset used in this project contains various air pollution indicators such as:
+This repository also contains the complete project documentation:
 
-* PM2.5
-* PM10
-* NO₂
-* SO₂
-* CO
-* O₃
+* **Project Report:**
+  `B2.pdf`
 
-These pollutants are used to analyze air quality levels and train predictive models.
+* **Project Presentation (PPT converted to PDF):**
+  `22AIE312_BIG-DATA_ANALYTICS_B2.pdf`
 
----
-
-## Key Features
-
-* Big Data processing using **Apache Spark**
-* Data preprocessing and cleaning
-* Air pollution prediction model
-* Visualization dashboard
-* Containerized deployment using **Docker**
+These documents explain the **problem statement, methodology, system architecture, dataset, implementation, and results** of the project.
 
 ---
 
-## How to Run the Project
+## Results
 
-### Step 1: Clone the Repository
+The Random Forest models achieved strong prediction accuracy for most pollutants, demonstrating the effectiveness of **distributed machine learning for air quality forecasting**.
 
-```
-git clone https://github.com/CharanTeja115/AIE-B2_BDA_Project.git
-```
+Example R² Scores:
 
-### Step 2: Navigate to the Project Folder
-
-```
-cd AIE-B2_BDA_Project
-```
-
-### Step 3: Build the Scala Project
-
-```
-sbt compile
-```
-
-### Step 4: Run Spark Processing
-
-```
-sbt run
-```
-
-### Step 5: Run the Docker System
-
-```
-docker-compose up
-```
+| Pollutant | R² Score |
+| --------- | -------- |
+| PM10      | 0.873    |
+| PM2.5     | 0.857    |
+| O₃        | 0.812    |
+| CO        | 0.785    |
+| NO₂       | 0.851    |
+| SO₂       | 0.834    |
 
 ---
 
 ## Future Improvements
 
-* Integration with real-time pollution data sources
-* Advanced machine learning models for prediction
-* Web-based interactive dashboard
-* Real-time alerts for high pollution levels
+* Integration with **real-time IoT air quality sensors**
+* Real-time streaming using **Apache Kafka / Spark Streaming**
+* Advanced deep learning models for prediction
+* Web-based air quality monitoring dashboard
 
 ---
 
 ## Authors
 
-**Charan Teja**
+Group 2
 
-Big Data Analytics Project
-Apache Spark + Scala Implementation
+* Rahul B
+* Karthikeya CH
+* Mohan Raj S
+* Charan Teja G
 
----
-
-## License
-
-This project is developed for **educational and research purposes**.
+Amrita School of Artificial Intelligence
+Amrita Vishwa Vidyapeetham
