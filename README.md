@@ -20,7 +20,32 @@ A **Random Forest regression model using Spark MLlib** is applied to predict pol
 * Streamlit (Visualization Dashboard)
 
 ---
+---
 
+## Project Structure
+
+```
+AIE-B2_BDA_Project
+│
+├── AirQualitySystem
+│   ├── backend
+│   ├── dashboard
+│   └── docker-compose.yml
+│
+├── src
+│   └── main
+│       └── scala
+│           ├── Preprocessing.scala
+│           └── TrainAirQualityModel.scala
+│
+├── project
+├── build.sbt
+├── B2.pdf
+├── 22AIE312_BIG-DATA_ANALYTICS_B2.pdf
+└── README.md
+```
+
+---
 ## Dataset
 
 The project uses a large air quality dataset containing pollutant measurements and environmental attributes including:
@@ -67,32 +92,6 @@ The system pipeline consists of:
 
    * Streamlit dashboard to visualize prediction performance
 
----
-
-## Project Structure
-
-```
-AIE-B2_BDA_Project
-│
-├── AirQualitySystem
-│   ├── backend
-│   ├── dashboard
-│   └── docker-compose.yml
-│
-├── src
-│   └── main
-│       └── scala
-│           ├── Preprocessing.scala
-│           └── TrainAirQualityModel.scala
-│
-├── project
-├── build.sbt
-├── B2.pdf
-├── 22AIE312_BIG-DATA_ANALYTICS_B2.pdf
-└── README.md
-```
-
----
 
 ## Documentation
 
